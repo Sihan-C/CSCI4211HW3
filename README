@@ -1,0 +1,21 @@
+Name: Sihan Chen
+student ID: 4452332
+X500: chen2436
+
+Description:  
+The dir-server was selected at "csel-kh4250-06.cselabs.umn.edu". And db server was selected at "csel-kh1200-13.cselabs.umn.edu". These two hostnames are hardcoded in the code. All of the implementations follow the rules provided in the assignment. For unspecified rule of the data transmission between app client and app server. How I implemented it is that I store 4 different sizes into an array, that is 10KB(10000B), 100KB(100000B),1000KB(1000000B) and 10000KB(10000000B). Data sending is completed in 3 for loops, the first for loop is used to loop through 2 different servers, the second for loop is used to loop through 4 different sizes and the last for loop is used to measure the total time 5 times and calculate its average the send to the db server. client will send a message “Finish\r\n”, after it transmitted all the data, to notify the app server that data transmission is finished. Each time the first for loop go through once, that is the measurement of one server is completed, app client will send an “Close\r\n” message to tell app server to close the connection. And the unit of the calculated time is microseconds. 
+
+Makefile: In Each one of the three folds, there exist a Makefile, simply run it with command: make. 
+
+
+After that,
+
+For the app_client:
+./app_client <dir port> <db port>
+
+For the app_server:
+./app_server <dir port> 
+
+For the dir_server:
+./app_server <dir port>
+ 
